@@ -4,8 +4,9 @@ import booksControllers from "../controllers/booksControllers.js";
 import { addBookSchema } from "../schemas/booksSchemas.js";
 
 const booksRouter = express.Router();
-const { addNewBook } = booksControllers;
+const { addNewBook, getAllBooks } = booksControllers;
 
 booksRouter.post("/", validateBody(addBookSchema), addNewBook);
+booksRouter.get("/", getAllBooks);
 
 export default booksRouter;
