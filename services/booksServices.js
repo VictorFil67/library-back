@@ -25,3 +25,31 @@ export async function addBook(title, author, isBorrowed) {
   await updateBooks(books);
   return newBook;
 }
+
+export async function updateBookByIsbn(bookIsbn, data) {
+  const books = await listBooks();
+  const index = books.findIndex((item) => item.isbn === bookIsbn);
+  if (index === -1) {
+    return null;
+  }
+  books[index] = { ...books[index], ...data };
+  await updateBooks(books);
+  return books[index];
+}
+
+export async function getBookByIsbn(bookIsbn) {
+  const books = await listBooks();
+  const result = books.find((item) => item.isbn === bookIsbn);
+  return result || null;
+}
+
+export async function removeBook(bookIsbn) {
+  const books = await listBooks();
+  const index = books.findIndex((item) => item.isbn === bookIsbn);
+  if (index === -1) {
+    return null;
+  }
+  const [deletedBook] = books.splice(index, 1);
+  await updateBooks(books);
+  return deletedBook;
+}

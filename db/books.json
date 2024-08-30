@@ -3,7 +3,7 @@
     "isbn": "978-3-16-148410-0",
     "title": "Harry Potter and the Philosopher's Stone",
     "author": "J.K. Rowling",
-    "isBorrowed": false
+    "isBorrowed": true
   },
   {
     "isbn": "978-1-56619-909-4",
@@ -12,7 +12,7 @@
     "isBorrowed": true
   },
   {
-    "isbn": "HWAwOtgOvLLXEvbRqtHak",
+    "isbn": "wqu2x6uNH_XLaWlxtIm2_",
     "title": "1234557123qwer456",
     "author": "qwer",
     "isBorrowed": false
