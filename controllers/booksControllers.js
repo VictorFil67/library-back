@@ -2,7 +2,9 @@ import ctrlWrapper from "../decorators/ctrlWrapper.js";
 import HttpError from "../helpers/HttpError.js";
 import {
   addBook,
+  getBookByQuery,
   listBooks,
+  markBookByIsbn,
   removeBook,
   updateBookByIsbn,
 } from "../services/booksServices.js";
@@ -39,9 +41,32 @@ const deleteBook = async (req, res) => {
   }
   res.status(200).json(result);
 };
+
+const markBook = async (req, res) => {
+  const { isbn } = req.params;
+  const { isBorrowed } = req.body;
+  const result = await markBookByIsbn(isbn, isBorrowed);
+  if (!result) {
+    throw HttpError(404);
+  }
+  res.status(200).json(result);
+};
+
+const searchBook = async (req, res) => {
+  const query = req.query;
+  console.log(req.query);
+  const result = await getBookByQuery(query);
+  if (!result) {
+    throw HttpError(404);
+  }
+  res.status(200).json(result);
+};
+
 export default {
   getAllBooks: ctrlWrapper(getAllBooks),
   addNewBook: ctrlWrapper(addNewBook),
   updateBook: ctrlWrapper(updateBook),
   deleteBook: ctrlWrapper(deleteBook),
+  markBook: ctrlWrapper(markBook),
+  searchBook: ctrlWrapper(searchBook),
 };

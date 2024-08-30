@@ -9,5 +9,8 @@ export const addBookSchema = Joi.object({
 export const updateBookSchema = Joi.object({
   title: Joi.string(),
   author: Joi.string(),
-  //   isBorrowed: Joi.boolean(),
+});
+
+export const markBookSchema = Joi.object({
+  isBorrowed: Joi.boolean().required(),
 });

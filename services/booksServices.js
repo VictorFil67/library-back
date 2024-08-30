@@ -53,3 +53,23 @@ export async function removeBook(bookIsbn) {
   await updateBooks(books);
   return deletedBook;
 }
+
+export async function markBookByIsbn(bookIsbn, isBorrowed) {
+  const books = await listBooks();
+  const index = books.findIndex((item) => item.isbn === bookIsbn);
+  if (index === -1) {
+    return null;
+  }
+  books[index] = { ...books[index], isBorrowed };
+  await updateBooks(books);
+  return books[index];
+}
+
+export async function getBookByQuery(query) {
+  const { isbn, title } = query;
+  const books = await listBooks();
+  const result = books.find(
+    (item) => item.isbn === isbn || item.title === title
+  );
+  return result || null;
+}
