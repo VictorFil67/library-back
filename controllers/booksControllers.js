@@ -15,8 +15,8 @@ const getAllBooks = async (req, res) => {
 };
 
 const addNewBook = async (req, res) => {
-  const { title, author, isBorrowed } = req.body;
-  const result = await addBook(title, author, isBorrowed);
+  const { title, author, isbn } = req.body;
+  const result = await addBook(title, author, isbn);
   res.status(201).json(result);
 };
 

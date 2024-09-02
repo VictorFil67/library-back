@@ -12,9 +12,32 @@
     "isBorrowed": true
   },
   {
-    "isbn": "wqu2x6uNH_XLaWlxtIm2_",
+    "isbn": "978-3-16-148410-11",
     "title": "1234557123qwer456",
     "author": "qwer",
     "isBorrowed": true
+  },
+  {
+    "isbn": "1321313-232-13-1-1=313",
+    "title": "sdfcg vh",
+    "author": "szdxfcgv",
+    "isBorrowed": true
+  },
+  {
+    "isbn": "784521-++96541-16.22",
+    "title": "erdtfghbjn",
+    "author": ";lkjhg",
+    "isBorrowed": false
+  },
+  {
+    "isbn": "978-3-16-148410-1",
+    "title": "1234557123qwer456",
+    "author": "qwer",
+    "isBorrowed": true
+  },
+  {
+    "isbn": "8745-7542-653",
+    "title": "wAFSDXFCV ",
+    "author": ";LKJHG"
   }
 ]

@@ -1,6 +1,5 @@
 import fs from "fs/promises";
 import path from "path";
-import { nanoid } from "nanoid";
 
 const booksPath = path.resolve("db", "books.json");
 
@@ -13,13 +12,12 @@ export async function listBooks() {
   return JSON.parse(buffer);
 }
 
-export async function addBook(title, author, isBorrowed) {
+export async function addBook(title, author, isbn) {
   const books = await listBooks();
   const newBook = {
-    isbn: nanoid(),
+    isbn,
     title,
     author,
-    isBorrowed,
   };
   books.push(newBook);
   await updateBooks(books);
